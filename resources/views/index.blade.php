@@ -5,6 +5,8 @@
 <div class="container">
     <h1 >Lista de Tarefas</h1>
     <a href="{{ route('tarefas.create') }}" class="btn">Adicionar Tarefa</a>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <table class="table">
         <thead>
@@ -38,5 +40,24 @@
         </tbody>
     </table>
 </div>
+
+<div class="container2">
+        <h1>Posts</h1>
+
+        <div class="posts">
+            @foreach ($posts as $post)
+                <div class="post">
+                    <h2>{{ $post->title }}</h2>
+                    <p>{{ $post->content }}</p>
+                </div>
+            @endforeach
+        </div>
+
+        <!-- Renderiza os links de paginação -->
+        <div class="pagination">
+            {{ $posts->links() }}
+        </div>
+    </div>
+
 
 @endsection
